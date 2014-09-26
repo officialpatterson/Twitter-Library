@@ -29,8 +29,8 @@ class TwitterStream():
             self.client.auth = None
 
 
-    def start(self):
-        payload = {'locations':'-9.05, 48.77, 2.19, 58.88'}
+    def start(self, trackwords):
+        payload = trackwords
         self.response = self.client.post("https://stream.twitter.com/1.1/statuses/filter.json", stream=True, data=payload)
         
         
